@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ModuleB
 
 class ViewController: UIViewController {
 
@@ -14,11 +15,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func launchModuleB(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "ModuleBStoryBoard", bundle: Bundle(for: ModuleBLandingViewController.classForCoder()))
+        if let landingVC = storyBoard.instantiateInitialViewController() {
+            self.present(landingVC, animated: true) {
+                
+            }
+        }
     }
-
+    
 }
 
